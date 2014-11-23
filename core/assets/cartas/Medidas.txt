@@ -1,0 +1,8 @@
+
+las cartas constan de 145 * 210
+
+las imagenes en las 3 categorias constan de 140 * 140 
+
+los nombres en las 3 categorias constan de 24 * 140
+
+en el caso del guerrero consta con 2 medidas referidas a la vida / ataque de 28 * 60
