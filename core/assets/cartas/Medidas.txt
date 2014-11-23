@@ -1,8 +1,72 @@
 
-las cartas constan de 145 * 210
+Guerrero
 
-las imagenes en las 3 categorias constan de 140 * 140 
+la carta consta con un tamaño 145 * 210
 
-los nombres en las 3 categorias constan de 24 * 140
+el nombre --> empiesa en las coordenadas 3 - 4 hasta 143 - 28
 
-en el caso del guerrero consta con 2 medidas referidas a la vida / ataque de 28 * 60
+	  --> ocupa un tamaño de 24 * 140
+
+
+La imagen --> empiesa en las coordenada 3 - 33 hasta 143 - 173
+
+	  --> ocupa un tamaño de 140 * 140
+
+
+la vida/daño recibido --> empiesa en las coordenadas 3 - 179 hasta 63 - 207
+
+		      --> ocupa un tamaño de 60 * 28
+
+
+el nivel del monstruo --> empiesa en las coordenadas 68 - 179 hasta 108 - 207
+
+		      --> ocupa un tamaño de 40 * 28
+
+
+el ataque del monstruo --> empiesa en las coordenadas 113 - 179 hasta 143 - 207
+
+		       --> ocupa un tamaño de 30 * 28
+
+
+
+
+Pergamino
+
+la carta consta con un tamaño 145 * 210
+
+el nombre --> empiesa en las coordenadas 3 - 4 hasta 143 - 28
+
+	  --> ocupa un tamaño de 24 * 140
+
+
+La imagen --> empiesa en las coordenada 3 - 33 hasta 143 - 173
+
+	  --> ocupa un tamaño de 140 * 140
+
+
+el nivel del pergamino --> empiesa en las coordenadas 53 - 179 hasta 93 - 207
+
+		       --> ocupa un tamaño de 40 * 28
+
+
+
+
+Trampa
+
+la carta consta con un tamaño 145 * 210
+
+el nombre --> empiesa en las coordenadas 3 - 4 hasta 143 - 28
+
+	  --> ocupa un tamaño de 24 * 140
+
+
+la imagen --> empiesa en las coordenadas 3 - 66 hasta 143 - 206
+
+	  --> ocupa un tamaño de 140 * 140
+
+
+el nivel de la trampa --> empiesa en las coordenadas 102 - 32 hasta 142 - 60
+
+		      --> ocupa un tamaño de 40 * 28
+
+
