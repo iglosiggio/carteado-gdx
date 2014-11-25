@@ -8,6 +8,7 @@ import org.mega.tablero.cartas.Pergamino;
 import org.mega.tablero.cartas.Sorpresa;
 import org.mega.tablerografico.cartas.GuerreroGrafico;
 import org.mega.tablerografico.cartas.PergaminoGrafico;
+import org.mega.tablerografico.cartas.SlotGrafico;
 import org.mega.tablerografico.cartas.SorpresaGrafico;
 
 import com.badlogic.gdx.Gdx;
@@ -18,7 +19,6 @@ import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.ui.HorizontalGroup;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.VerticalGroup;
-import com.badlogic.gdx.scenes.scene2d.utils.Align;
 
 public class LaFactory {
 	public static Texture guerrero_tex;
@@ -48,31 +48,13 @@ public class LaFactory {
 	}
 	
 	static public Group createSlot(SlotDeCampo slot) {
-		return createSlot(slot.getGuerrero(), slot.getPergamino(), slot.getSorpresa());
-	}
-	
-	static public Group createSlot(Guerrero guerrero, Pergamino pergamino, Sorpresa sorpresa) {
-		Group slot = new Group();
-		Actor g = getCarta(guerrero);
-		Actor p = getCarta(pergamino);
-		Actor s = getCarta(sorpresa);
-		
-		p.moveBy(0, 32);
-		s.moveBy(0, 64);
-		
-		slot.addActor(s);
-		slot.addActor(p);
-		slot.addActor(g);
-		
-		slot.setSize(145, 210 + 32 + 32);
-		
-		return slot;
+		return new SlotGrafico(slot);
 	}
 	
 	static public HorizontalGroup createCampo(Collection<SlotDeCampo> slots) {
-		HorizontalGroup campo = new HorizontalGroup().align(Align.bottom);
+		HorizontalGroup campo = new HorizontalGroup();
 		for(SlotDeCampo slot : slots) {
-			campo.addActor(createSlot(slot));
+			campo.addActor(new SlotGrafico(slot));
 		}
 		return campo;
 	}
