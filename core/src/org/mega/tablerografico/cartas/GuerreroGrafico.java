@@ -1,6 +1,7 @@
 package org.mega.tablerografico.cartas;
 
 import org.mega.tablero.cartas.Guerrero;
+import org.mega.tablero.eventos.ValidMessage;
 import org.mega.tablerografico.LaFactory;
 import org.mega.tablerografico.ZIndexChanger;
 
@@ -9,6 +10,10 @@ import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.utils.Align;
+
+import net.engio.mbassy.listener.Handler;
+import net.engio.mbassy.listener.Filter;
+import net.engio.mbassy.listener.Listener;
 
 public class GuerreroGrafico extends Group {
     Image fondo;
@@ -73,5 +78,9 @@ public class GuerreroGrafico extends Group {
 	addListener(new ZIndexChanger(this));
     }
     
-    @Listener
+    @Handler
+    @Filters(ValidMessage.class)
+    void vidaChanged() {
+	
+    }
 }
