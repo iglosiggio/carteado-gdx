@@ -14,6 +14,10 @@ public class GuerreroGrafico extends Group {
     Image fondo;
     Image icono;
     Label nombre;
+    Label vida;
+    Label nivel;
+    Label ataque;
+    Label dañoRecibido;
 
     public GuerreroGrafico(Guerrero guerrero) {
 
@@ -41,8 +45,7 @@ public class GuerreroGrafico extends Group {
 
 	addActor(icono);
 
-	Label vida = new Label(Integer.toString(guerrero.getVida()),
-		LaFactory.skin);
+	vida = new Label(Integer.toString(guerrero.getVida()), LaFactory.skin);
 	vida.setName("vida");
 	vida.moveBy(3, 3);
 	vida.setAlignment(Align.center);
@@ -50,8 +53,7 @@ public class GuerreroGrafico extends Group {
 
 	addActor(vida);
 
-	Label nivel = new Label(Integer.toString(guerrero.getNivel()),
-		LaFactory.skin);
+	nivel = new Label(Integer.toString(guerrero.getNivel()), LaFactory.skin);
 	nivel.setName("nivel");
 	nivel.moveBy(3 + 60 + 5, 3);
 	nivel.setAlignment(Align.center);
@@ -59,7 +61,7 @@ public class GuerreroGrafico extends Group {
 
 	addActor(nivel);
 
-	Label ataque = new Label(Integer.toString(guerrero.getAtaque()),
+	ataque = new Label(Integer.toString(guerrero.getAtaque()),
 		LaFactory.skin);
 	ataque.setName("ataque");
 	ataque.moveBy(3 + 60 + 5 + 40 + 5, 3);
@@ -70,4 +72,6 @@ public class GuerreroGrafico extends Group {
 
 	addListener(new ZIndexChanger(this));
     }
+    
+    @Listener
 }
