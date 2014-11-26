@@ -25,7 +25,7 @@ public class PuntoEntrada extends ApplicationAdapter {
     @Override
     public void create() {
 	screen = new FitViewport(1024, 600);
-	stage = new Stage();
+	stage = new Stage(screen);
 	Collection<SlotDeCampo> campoJ1 = Arrays.asList(SlotDeCampo
 		.getSlotBase(), SlotDeCampo.getSlotBase(),
 		new SlotDeCampo(new Guerrero(10, "Consolero", "algo", 4, 6, 0),

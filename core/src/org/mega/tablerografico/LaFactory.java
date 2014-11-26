@@ -32,7 +32,6 @@ public class LaFactory {
 	sorpresa_tex = new Texture("cartas/sorpresa.png");
 	textureAtlas = new TextureAtlas("uiskin.atlas.txt");
 	skin = new Skin(Gdx.files.internal("uiskin.json"));
-	skin.addRegions(textureAtlas);
     }
 
     static public Group getCarta(Guerrero guerrero) {

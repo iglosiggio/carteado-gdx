@@ -1,21 +1,21 @@
 package org.mega.tablerografico.cartas;
 
+import org.mega.tablero.Juego;
 import org.mega.tablero.cartas.Guerrero;
-import org.mega.tablero.eventos.ValidMessage;
+import org.mega.tablero.eventos.ProperNotificationFilter;
+import org.mega.tablero.eventos.PropiedadChanged;
+import org.mega.tablero.eventos.PropiedadesAceptadas;
 import org.mega.tablerografico.LaFactory;
-import org.mega.tablerografico.ZIndexChanger;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.utils.Align;
 
 import net.engio.mbassy.listener.Handler;
 import net.engio.mbassy.listener.Filter;
-import net.engio.mbassy.listener.Listener;
 
-public class GuerreroGrafico extends Group {
+public class GuerreroGrafico extends CartaGrafica {
     Image fondo;
     Image icono;
     Label nombre;
@@ -74,13 +74,23 @@ public class GuerreroGrafico extends Group {
 	ataque.setSize(30, 28);
 
 	addActor(ataque);
-
-	addListener(new ZIndexChanger(this));
+	
+	Juego.getEventBus().subscribe(this);
     }
     
-    @Handler
-    @Filters(ValidMessage.class)
-    void vidaChanged() {
+    @Override
+    public Label getNombre() {
+	return nombre;
+    }
+    
+    @Override
+    public Image getIcon() {
+	return icono;
+    }
+    
+    @PropiedadesAceptadas("vida")
+    @Handler(filters = @Filter(ProperNotificationFilter.class))
+    void vidaChanged(PropiedadChanged<Integer, Guerrero> evento) {
 	
     }
 }

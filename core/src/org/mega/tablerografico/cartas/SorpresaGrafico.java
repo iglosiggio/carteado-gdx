@@ -2,15 +2,13 @@ package org.mega.tablerografico.cartas;
 
 import org.mega.tablero.cartas.Sorpresa;
 import org.mega.tablerografico.LaFactory;
-import org.mega.tablerografico.ZIndexChanger;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.utils.Align;
 
-public class SorpresaGrafico extends Group {
+public class SorpresaGrafico extends CartaGrafica {
     Image fondo;
     Image icono;
     Label nombre;
@@ -49,7 +47,15 @@ public class SorpresaGrafico extends Group {
 	nivel.setSize(40, 28);
 
 	addActor(nivel);
+    }
 
-	addListener(new ZIndexChanger(this));
+    @Override
+    public Label getNombre() {
+	return nombre;
+    }
+
+    @Override
+    public Image getIcon() {
+	return icono;
     }
 }

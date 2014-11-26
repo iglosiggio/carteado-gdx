@@ -8,7 +8,9 @@ public class DesktopLauncher {
     public static void main(String[] arg) {
 	LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 	config.fullscreen = true;
-	config.width = 1024;
+	//config.width = 1024;
+	//config.height = 600;
+	config.width = 800;
 	config.height = 600;
 	config.title = "Carteado!";
 	new LwjglApplication(new PuntoEntrada(), config);
