@@ -88,7 +88,7 @@ public class GuerreroGrafico extends CartaGrafica {
 	return icono;
     }
     
-    @PropiedadesAceptadas("vida")
+    @PropiedadesAceptadas(propiedades = "vida", desde = Guerrero.class, dato = Integer.class)
     @Handler(filters = @Filter(ProperNotificationFilter.class))
     void vidaChanged(PropiedadChanged<Integer, Guerrero> evento) {
 	
